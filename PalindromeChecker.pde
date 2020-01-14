@@ -17,11 +17,15 @@ public void setup()
 public boolean palindrome(String word)
 {
   //your code here
-  return false;
+  word = word.toLowerCase().replaceAll("(!|'|\\?|\"|,|\\s)+", "");
+  return word.equals(reverse(word));
 }
 public String reverse(String str)
 {
     String sNew = new String();
+    for (int i = str.length(); i >= 1; i--) {
+    	sNew += str.substring(i-1, i);
+    }
     //your code here
     return sNew;
 }
